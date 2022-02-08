@@ -1,8 +1,10 @@
+require('dotenv').config()
+
 const con = {
-    host: 'us-cdbr-east-05.cleardb.net',
-    user: 'b8fc0718776ab1',
-    password: '9bfae3a7',
-    database: 'heroku_b2e4acaf0c2c9ce'
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 }
 
 // AWS db
