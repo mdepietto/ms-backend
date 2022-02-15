@@ -14,7 +14,7 @@ app.use(express.json())
 app.use(cors())
 app.use(bodyParser.json())
 
-app.post('https://the-media-shelf.herokuapp.com/apiMedia', (req, res) => {
+app.post('/apiMedia', (req, res) => {
     var { api, userName } = req.body
     db.query(`SELECT * FROM ${ api } WHERE name = ?`, [ userName.name ], (err, rows) => {
         if (err) throw(err)
