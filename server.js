@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express')
-const cors = require('cors')
+// const cors = require('cors')
 const app = express()
 const port = process.env.PORT || 6500
 
@@ -11,7 +11,7 @@ const { con } = require('./db')
 const db = mysql.createConnection(con)
 
 app.use(express.json())
-app.use(cors())
+// app.use(cors())
 app.use(bodyParser.json())
 
 app.post('/apiMedia', (req, res) => {
