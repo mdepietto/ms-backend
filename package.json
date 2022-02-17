@@ -1,6 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
+  "proxy": "https://the-media-shelf.herokuapp.com",
   "engines": {
     "node": "17.4.0"
   },
