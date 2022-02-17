@@ -10,8 +10,20 @@ const mysql = require('mysql')
 const { con } = require('./db')
 const db = mysql.createConnection(con)
 
+const whitelist = ["https://mdepietto.github.io/ms-frontend"]
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || whitelist.indexOf(origin) !== -1) {
+            callback(null, true)
+        } else {
+            callback(new Error("Not allowed by CORS"))
+        }
+    },
+    credentials: true,
+}
+
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(bodyParser.json())
 
 app.post('/apiMedia', (req, res) => {
