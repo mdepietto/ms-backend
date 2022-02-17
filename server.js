@@ -10,7 +10,7 @@ const mysql = require('mysql')
 const { con } = require('./db')
 const db = mysql.createConnection(con)
 
-const whitelist = ["https://the-media-shelf.herokuapp.com/"]
+const whitelist = ["https://the-media-shelf.herokuapp.com/apiMedia"]
 const corsOptions = {
     origin: function (origin, callback) {
         if (!origin || whitelist.indexOf(origin) !== -1) {
