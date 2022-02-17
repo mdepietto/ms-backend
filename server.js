@@ -11,7 +11,6 @@ const { con } = require('./db')
 const db = mysql.createConnection(con)
 
 app.use(express.json())
-
 app.use(cors({ origin: "*" }))
 app.use(bodyParser.json())
 
